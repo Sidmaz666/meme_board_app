@@ -1,50 +1,205 @@
-# Welcome to your Expo app 👋
+# MEME Sound Board 🔊
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A dead-simple, playful meme soundboard app built with React Native and Expo. Tap buttons to play fun sound effects instantly.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 🎵 **24 Unique Sounds** - From memes to reactions, all your favorite sounds in one place
+- 🌙 **Dark Mode Only** - Beautiful dark theme designed for comfort
+- ✨ **Smooth Animations** - Satisfying button press animations and active sound glow effects
+- 📱 **Native Feel** - Haptic feedback on every tap
+- 🚀 **Lightning Fast** - Instant sound playback with no delays
+- 🎯 **One Screen** - No navigation, no clutter, just pure fun
 
-   ```bash
-   npm install
-   ```
+## Sounds Included
 
-2. Start the app
+- 🗣️ abe sale
+- 🟥 among us
+- 🦗 cricket
+- 👶 baby laugh
+- 🍆 baigan
+- 🤨 bruh
+- 🚶 chaloo
+- 🧪 dexter
+- 🔔 ding
+- 🎭 dun dun
+- 🤷 ehhh
+- ❌ error
+- 😤 fahhh
+- 💨 fart
+- 😂 laugh
+- 🔫 gunshot
+- 😮 haaa
+- 😏 lekin ye
+- 🦆 quack
+- 😎 rizz
+- 🐱 sad meow
+- 👋 slap
+- 🕷️ spiderman
+- 🧽 spongebob
 
-   ```bash
-   npx expo start
-   ```
+## Tech Stack
 
-In the output, you'll find options to open the app in a
+- **React Native** - Cross-platform mobile framework
+- **Expo** - Managed workflow for rapid development
+- **Expo AV** - Audio playback
+- **Expo Haptics** - Tactile feedback
+- **TypeScript** - Type-safe development
+- **Expo Router** - File-based routing
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Prerequisites
 
-## Get a fresh project
+- Node.js 18+ installed
+- npm or yarn
+- Expo CLI (optional, can use npx)
 
-When you're ready, run:
+### Installation
 
+1. Clone the repository:
 ```bash
-npm run reset-project
+git clone <your-repo-url>
+cd meme-sound-board
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
+```bash
+npm install
+```
 
-## Learn more
+3. Start the development server:
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run on your device:
+   - **iOS**: Press `i` in the terminal or scan QR code with Camera app
+   - **Android**: Press `a` in the terminal or scan QR code with Expo Go app
+   - **Web**: Press `w` in the terminal
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Building for Production
 
-## Join the community
+This project is configured for EAS Build (Expo Application Services).
 
-Join our community of developers creating universal apps.
+### Setup EAS
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Install EAS CLI globally:
+```bash
+npm install -g eas-cli
+```
+
+2. Login to your Expo account:
+```bash
+eas login
+```
+
+3. Configure the project:
+```bash
+eas build:configure
+```
+
+4. Update `app.json` with your project ID after running `eas build:configure`
+
+### Build Commands
+
+**Development Build:**
+```bash
+eas build --profile development --platform ios
+eas build --profile development --platform android
+```
+
+**Preview Build (for testing):**
+```bash
+eas build --profile preview --platform ios
+eas build --profile preview --platform android
+```
+
+**Production Build:**
+```bash
+eas build --profile production --platform ios
+eas build --profile production --platform android
+```
+
+**Build for both platforms:**
+```bash
+eas build --profile production --platform all
+```
+
+### Submitting to App Stores
+
+**iOS (App Store):**
+```bash
+eas submit --platform ios
+```
+
+**Android (Google Play):**
+```bash
+eas submit --platform android
+```
+
+## Project Structure
+
+```
+meme-sound-board/
+├── app/
+│   ├── _layout.tsx      # Root layout with navigation
+│   └── index.tsx        # Main soundboard screen
+├── assets/
+│   ├── images/          # App icons and splash screens
+│   └── sounds/          # Audio files (24 MP3 files)
+├── app.json             # Expo configuration
+├── eas.json             # EAS Build configuration
+├── package.json         # Dependencies
+└── tsconfig.json        # TypeScript configuration
+```
+
+## Configuration
+
+### App Metadata
+
+- **Name**: MEME Sound Board
+- **Bundle ID (iOS)**: `com.meme-sound-board.app`
+- **Package (Android)**: `com.meme-sound-board.app`
+- **Version**: 1.0.0
+- **Orientation**: Portrait only
+
+### Customization
+
+To add new sounds:
+1. Add MP3 files to `assets/sounds/`
+2. Update `soundFiles` object in `app/index.tsx`
+3. Add sound entry to `SOUNDS` array with emoji and label
+
+## Development
+
+### Scripts
+
+- `npm start` - Start Expo development server
+- `npm run android` - Run on Android device/emulator
+- `npm run ios` - Run on iOS device/simulator
+- `npm run web` - Run in web browser
+- `npm run lint` - Run ESLint
+
+### Code Style
+
+- TypeScript for type safety
+- Functional components with hooks
+- Minimal dependencies
+- Clean, readable code
+
+## Design Philosophy
+
+meme-sound-board follows a minimalist design philosophy:
+
+- **Honest** - No ads, no tracking, no BS
+- **Playful** - Emotionally warm and fun
+- **Simple** - One screen, one purpose
+- **Fast** - Instant sound playback
+- **Beautiful** - Dark mode, smooth animations
+
+## Support
+
+For issues or questions, please open an issue in the repository.
+
+---
